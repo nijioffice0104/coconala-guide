@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="guide.css?v=11">
+<link rel="stylesheet" href="guide.css?v=12">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="images/icon-180.png">
 <link rel="icon" type="image/png" sizes="192x192" href="images/icon-192.png">
@@ -44,18 +44,33 @@
 <div class="why"><span class="k">このステップが大事な理由</span><p>出品したときに「これがいい」と思ったタイトルや画像が、お客様にも響いているとは限りません。数字を見て少しずつ直していくお店が伸びていきます。値上げは慎重にして、価格の違う商品を増やしながらお店を育てていきましょう。</p></div>
 
 <section class="sec" id="s1">
-  <div class="sec-head"><span class="sec-no">1</span><h2>お店の分析で、月に1回見直す</h2><span class="tag">虹オフィスツール</span></div>
+  <div class="sec-head"><span class="sec-no">1</span><h2>月に1回、ChatGPTでお店を見直す</h2></div>
   <div class="card">
-    <figure class="toolshot"><img src="images/tool-analysis.jpg" alt="お店の分析の画面" loading="lazy"><figcaption>お店の分析の画面。自分のプロフィールURLを貼って「分析する」を押します</figcaption></figure>
-    <figure class="video"><button type="button" class="video-play" data-yt="ExuxSmfM_EQ" aria-label="お店の分析の使い方動画を再生"><img src="https://i.ytimg.com/vi/ExuxSmfM_EQ/hqdefault.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></button><figcaption>▶ お店の分析の使い方動画。押すと再生します</figcaption></figure>
     <ol class="howto">
-      <li><div>ココナラで自分のプロフィールページを開き、URLをコピーする<small>URLのコピーのしかたは<a href="step2.html#url">STEP 2</a>にあります</small></div></li>
-      <li><div>ツールにURLを貼って「分析する」を押す<small>お店の公開情報と商品の本文を集めます。ログイン情報やお客様とのやりとりは読み取りません</small></div></li>
-      <li><div>できたプロンプトをコピーして、ChatGPTに貼って送る</div></li>
+      <li><div>出品者用の管理画面で、商品ごとの閲覧数・お気に入り数・販売数を見る</div></li>
+      <li><div>プロフィールの自己紹介と、商品ごとのタイトル・価格・数字をメモする</div></li>
+      <li><div>下のプロンプトに貼って送る</div></li>
       <li><div>返ってきた「お店の強み」「商品それぞれの役割」「改善案」を読む</div></li>
       <li><div>改善案の中から、今月直すことを<b>1つだけ</b>選ぶ<small>一度にたくさん変えると、何が効いたのか分からなくなります</small></div></li>
     </ol>
-    <div class="sold"><b>お店の分析は別売りです</b><span>このガイドブックには含まれていません。Brainの「ココナラ自店舗＆競合リサーチのお得セット」でお求めいただけます。</span><a href="https://brain-market.com/u/niji-rara4649/a/b1ITN3YjMgoTZsNWa0JXY" target="_blank" rel="noopener">販売ページを見る ↗</a></div>
+<div class="prompt"><div class="prompt-head"><b>プロンプト：お店を見直す</b><button type="button" class="copy">コピー</button></div><pre>あなたは、ココナラの占いのお店づくりにくわしいアドバイザーです。
+私のお店を見て、今月直すところを一緒に決めてください。
+
+【プロフィールの自己紹介】
+（ここに貼る）
+
+【商品ごとの情報（直近1か月）】
+（商品ごとに1行ずつ。商品名／価格／閲覧数／お気に入り数／販売数）
+
+【先月直したこと】
+（あれば。直す前の状態も書く）
+
+【お願い】
+1. お店の強みを3つ挙げてください
+2. 商品それぞれの役割（入口・ミドル・バック）と、足りない価格帯を教えてください
+3. 数字から見た改善案を3つ出してください（見られているのに買われない商品は本文と価格、あまり見られていない商品は画像とタイトルを中心に）
+4. 今月直すことを1つだけ選んで、具体的な直し方を教えてください
+値上げより、価格の違う商品を増やす方向で考えてください。</pre></div>
   </div>
 </section>
 
@@ -115,7 +130,7 @@
   <div class="sec-head"><span class="sec-no">✓</span><h2>宿題（毎月）</h2></div>
   <div class="card">
     <ul class="check" data-group="s10">
-      <li><label><input type="checkbox" id="s10-1"><span>お店の分析で、お店の分析をした</span></label></li>
+      <li><label><input type="checkbox" id="s10-1"><span>見直しのプロンプトで、お店を分析した</span></label></li>
       <li><label><input type="checkbox" id="s10-2"><span>管理画面で、商品ごとの閲覧数・お気に入り数・販売数を見た</span></label></li>
       <li><label><input type="checkbox" id="s10-3"><span>今月直すことを1つ決めた</span></label></li>
       <li><label><input type="checkbox" id="s10-4"><span>直す前の状態をメモしてから、直した</span></label></li>
@@ -136,8 +151,8 @@
 </div>
 <footer>
   <p>手数料や規約は変わることがあります。2026年10月時点の公式ガイド・ヘルプをもとにしています。最新の内容は<a href="https://coconala.com/pages/guide_top" target="_blank" rel="noopener">ココナラ公式「ご利用ガイド」</a>で確認してください。</p>
-  <p>このガイドと5つのツールは虹オフィスが作ったもので、ココナラ公式のものではありません。</p>
+  <p>このガイドは虹オフィスが作ったもので、ココナラ公式のものではありません。</p>
 </footer>
-<script src="guide.js?v=11"></script>
+<script src="guide.js?v=12"></script>
 </body>
 </html>

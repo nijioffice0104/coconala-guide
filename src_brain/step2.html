@@ -36,7 +36,7 @@
 <section class="sec" id="url">
   <div class="sec-head"><span class="sec-no">3</span><h2>URLのコピーのしかた</h2></div>
   <div class="card">
-    <p>虹オフィスのツールは、どれもココナラのURLを貼るところから始まります。スマホのアプリでは画面にURLが出ていないので、「共有」ボタンからコピーします。</p>
+    <p>このあと、参考にするお店のURLをChatGPTに渡します。スマホのアプリでは画面にURLが出ていないので、「共有」ボタンからコピーします。</p>
     <h3>商品ページのURL</h3>
     <div class="shots">
       <figure><img src="images/url-service-1.jpg" alt="" loading="lazy"><figcaption><b>1</b>商品ページの右上にある共有ボタン（四角から矢印が出ているマーク）をタップ</figcaption></figure>
@@ -49,7 +49,7 @@
     </div>
     <p class="shots-note">iPhoneの画面です。Androidでも、共有ボタンを押して「コピー」や「リンクをコピー」を選べば同じです。</p>
     <ul>
-      <li><b>コピーしたら</b>：ツールの入力欄を長押しして「ペースト（貼り付け）」を選びます。何件もまとめて貼るときは、いったんメモアプリに1行ずつ貼ってためておくと便利です。</li>
+      <li><b>コピーしたら</b>：メモアプリに1行ずつ貼ってためておきます。このあとChatGPTに渡すときに、まとめてコピーできて便利です。</li>
       <li><b>パソコンの場合</b>：ブラウザの一番上のアドレスバーをクリックして、出てきたURLをコピーします。</li>
       <li><b>うまく貼れたかの確認</b>：商品ページは「https://coconala.com/services/」、プロフィールページは「https://coconala.com/users/」で始まっていればOKです。</li>
     </ul>
@@ -57,30 +57,42 @@
 </section>
 
 <section class="sec" id="s4">
-  <div class="sec-head"><span class="sec-no">4</span><h2>競合リサーチで分析する</h2><span class="tag">虹オフィスツール</span></div>
+  <div class="sec-head"><span class="sec-no">4</span><h2>ChatGPTで売れているお店を分析する</h2></div>
   <div class="card">
-    <figure class="toolshot"><img src="images/tool-competitor.jpg" alt="競合リサーチの画面" loading="lazy"><figcaption>競合リサーチの最初の画面。いちばん上の欄にURLを1行ずつ貼ります</figcaption></figure>
-    <figure class="video"><button type="button" class="video-play" data-yt="BC5uD2Tjguc" aria-label="競合リサーチの使い方動画を再生"><img src="https://i.ytimg.com/vi/BC5uD2Tjguc/hqdefault.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></button><figcaption>▶ 競合リサーチの使い方動画。押すと再生します</figcaption></figure>
-    <dl class="field">
-      <dt>調べたい競合のURL</dt><dd>さっきメモしたURLを1〜10件</dd>
-      <dt>お店の状況</dt><dd>すでにお店がある／これから、などから選ぶ</dd>
-      <dt>どんな商品を作りたい？</dt><dd>まだ決まっていなければ「競合を参考に考えたい」でOK</dd>
-      <dt>使える占術・できること</dt><dd>タロット、霊視、得意な相談など</dd>
-      <dt>経験・価値観</dt><dd>空欄でも動きますが、ここを書くほど「あなたらしい方向性」が出ます</dd>
-    </dl>
     <ol class="howto">
-      <li><div>上の項目を入力して「分析プロンプトを作る」を押す</div></li>
-      <li><div>できたプロンプトをコピーして、ChatGPTに貼って送る</div></li>
-      <li><div>返ってきた「お店の方向性」「商品案」「最初にやること」を保存する<small>メモアプリやGoogleドキュメントに貼っておくと、あとのステップでそのまま使えます</small></div></li>
+      <li><div>参考にするお店ごとに、URLと「いちばん売れていそうな商品」のタイトル・価格をメモする<small>ChatGPTはココナラのページを開けないことがあります。そのときのために、サービス内容の最初の数行もコピーしておくと安心です</small></div></li>
+      <li><div>下のプロンプトの（　）を書きかえて、メモした内容を貼って送る</div></li>
+      <li><div>返ってきた「お店の方向性の案」「ライバルの少ない切り口」「最初にやること」を保存する<small>メモアプリやGoogleドキュメントに貼っておくと、あとのステップでそのまま使えます</small></div></li>
     </ol>
-    <a class="btn" href="https://niji-coconala-competitor-research.analia511.chatgpt.site/" target="_blank" rel="noopener">競合リサーチを開く ↗</a>
+<div class="prompt"><div class="prompt-head"><b>プロンプト：売れているお店を分析する</b><button type="button" class="copy">コピー</button></div><pre>あなたは、ココナラの占いカテゴリにくわしいリサーチャーです。
+これからお店づくりを進める私のために、売れているお店を分析してください。
+
+【私について】
+・お店の状況：（例：これから出品する／出品しているが売れていない）
+・使える占術・できること：（例：タロット、霊視）
+・経験・価値観：（なぜ占いをしているか、どんな人を助けたいか）
+
+【参考にするお店】
+（お店ごとに、URLと、商品のタイトル・価格・サービス内容の最初の数行を貼ってください）
+お店1：
+お店2：
+お店3：
+
+【お願い】
+1. それぞれのお店を「誰に・何を・いくらで」の1行でまとめてください
+2. タイトルの付け方、価格の並べ方、オプションの組み方に共通する「型」を挙げてください
+3. まだ誰も言っていない切り口や、ライバルが少なそうな場所を3つ提案してください
+4. 私の占術と価値観をふまえて、「私のお店は、＿＿で悩んでいる人のための、＿＿な鑑定です」の形で、お店の方向性の案を3つ出してください
+5. 最初にやることを3つ教えてください
+文章や画像をそのまま真似する提案はしないでください。
+URLのページが読めないときは、貼った文章だけで分析してください。</pre></div>
   </div>
 </section>
 
 <section class="sec" id="s5">
   <div class="sec-head"><span class="sec-no">5</span><h2>「なぜ売れているのか」を深掘りする</h2></div>
   <div class="card">
-    <p>型が分かったら、「なぜそれが選ばれているのか」まで言葉にしておきます。理由を自分で説明できるようになると、このあとの文章づくりがぐっと早くなります。競合リサーチの答えと同じChatGPTの会話の中で、続けて送ってください。</p>
+    <p>型が分かったら、「なぜそれが選ばれているのか」まで言葉にしておきます。理由を自分で説明できるようになると、このあとの文章づくりがぐっと早くなります。上の分析と同じChatGPTの会話の中で、続けて送ってください。</p>
     <div class="prompt"><div class="prompt-head"><b>プロンプト：売れている理由を深掘り</b><button type="button" class="copy">コピー</button></div><pre>あなたはココナラの占いカテゴリの市場分析が得意なリサーチャーです。
 先ほどの分析結果を踏まえて、これらのお店が選ばれている理由を、
 購入者の心理（なぜ不安が解消されるのか／なぜ安心して頼めるのか）の視点で5つ言語化してください。
@@ -105,7 +117,7 @@
   <div class="card">
     <ul class="check" data-group="s2">
       <li><label><input type="checkbox" id="s2-1"><span>参考にするお店のURLを3〜5件メモした</span></label></li>
-      <li><label><input type="checkbox" id="s2-2"><span>競合リサーチでプロンプトを作り、ChatGPTの答えを保存した</span></label></li>
+      <li><label><input type="checkbox" id="s2-2"><span>分析のプロンプトをChatGPTに送り、答えを保存した</span></label></li>
       <li><label><input type="checkbox" id="s2-3"><span>「売れている理由」と「取り入れる3つの要素」を保存した</span></label></li>
       <li><label><input type="checkbox" id="s2-4"><span>お店の軸になるテーマを決めた</span></label></li>
       <li><label><input type="checkbox" id="s2-5"><span>下の欄に、お店の方向性を一文で書いた</span></label></li>

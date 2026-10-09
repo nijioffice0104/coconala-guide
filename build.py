@@ -6,6 +6,7 @@ D = os.path.dirname(os.path.abspath(__file__))
 BRAIN = len(sys.argv) > 1 and sys.argv[1] == 'brain'
 BRAIN_DIR = 'g-vnzn5s3dc931'
 OUT = os.path.join(D, BRAIN_DIR) if BRAIN else D
+SRC = os.path.join(D, 'src_brain' if BRAIN else 'src')  # Brain版はツールの記載がない別原稿
 
 def variant(h):
     # <!--consult-->…<!--/consult--> はコンサル版だけ、<!--brain-->…<!--/brain--> はBrain版だけに残す
@@ -19,15 +20,15 @@ TITLE = 'ココナラはじめての出品ガイド'
 STEPS = [
  (0, 'はじめに', 'はじめに：ココナラの仕組みと準備', '約30分', 'ココナラの仕組みとお金の流れを知り、ChatGPTを使える状態にする。', 'ココナラの仕組み、ランク、お金の流れ、ChatGPTの準備、続けるための心構え', 1),
  (1, '登録と審査', '登録と審査：本人確認まで済ませる', '約20分', '会員登録・出品者情報・本人確認を終わらせ、審査で落ちやすい表現を知る。', '会員登録から本人確認まで。審査で落ちやすい3つの表現', 1),
- (2, '方向性を決める', '方向性を決める：売れているお店から学ぶ', '約40分', '売れているお店を3〜5店調べて、「私のお店は○○な人のための○○」と一文で言えるようにする。', 'モデリングと競合リサーチで、お店の方向性を一文にする', 1),
+ (2, '方向性を決める', '方向性を決める：売れているお店から学ぶ', '約40分', '売れているお店を3〜5店調べて、「私のお店は○○な人のための○○」と一文で言えるようにする。', 'モデリングと<!--consult-->競合リサーチ<!--/consult--><!--brain-->売れているお店の分析<!--/brain-->で、お店の方向性を一文にする', 1),
  (3, 'プロフィール', 'プロフィールを作る：「この人なら」と思ってもらう', '約30分', '書くべき5つの項目をそろえ、書いてはいけない情報を入れずにプロフィールを仕上げる。', '自己紹介の最初の100字、書いてはいけないこと、プロフィール画像', 1),
- (4, '商品をつくる', '商品をつくる：誰に・何を・いくらで', '約30分×2回', '悩み別の切り口で、入口・ミドル・バックの商品の出品原稿を、検索される言葉まで入れて仕上げる。', '切り口の見つけ方、最初からたくさん出品する、商品づくりスタジオ、検索される言葉', 2),
- (5, '見た目を整える', '見た目を整える：ひと目で伝わる画像', '約40分', '6：5の商品画像を、1枚ずつ役割を決めて作る。', '画像のサイズ、1枚ずつの役割、サムネイル工房、AIっぽさを消すコツ', 2),
+ (4, '商品をつくる', '商品をつくる：誰に・何を・いくらで', '約30分×2回', '悩み別の切り口で、入口・ミドル・バックの商品の出品原稿を、検索される言葉まで入れて仕上げる。', '切り口の見つけ方、最初からたくさん出品する、<!--consult-->商品づくりスタジオ<!--/consult--><!--brain-->ChatGPTで出品原稿<!--/brain-->、検索される言葉', 2),
+ (5, '見た目を整える', '見た目を整える：ひと目で伝わる画像', '約40分', '6：5の商品画像を、1枚ずつ役割を決めて作る。', '画像のサイズ、1枚ずつの役割、<!--consult-->サムネイル工房<!--/consult--><!--brain-->ChatGPTで画像づくり<!--/brain-->、AIっぽさを消すコツ', 2),
  (6, '出品と取引', '出品して取引する：購入から評価まで', '約30分', '商品を公開して、最初の取引を購入から評価まで迷わず終えられるようにする。', '出品の手順、取引の流れと期限、評価の仕組み、電話・ビデオの手数料', 3),
  (7, 'ルールを守る', 'ルールを守る：財産を失わないために', '約20分', '危ないことを危険度の高い順に知り、出品前にAIで最終チェックする。', '外部誘導、実績のごまかし、言葉と画像のルール、AIでの最終チェック', 3),
  (8, '実践の準備', '実践の準備：最初の1件を迎える', '約30分', '鑑定文の良い例・よくない例と対応のしかたを知り、最初の1件を迎える準備を終える。', '鑑定文の良い例・よくない例、受注から納品までの対応、最後のチェック', 3),
- (9, 'お客様を呼ぶ', 'お客様を呼ぶ：ブログとSNS', '約40分', 'ブログやSNSで、ココナラの外からも商品ページに来てもらえる入口を作る。', '誘導は一方通行、ブログジェネレーター、Threads・Instagram・TikTokライブ', 4),
- (10, '振り返って育てる', '振り返って育てる：毎月の見直しと成長', '毎月 約30分', '月に1回お店を見直して直すところを1つ決め、価格の違う商品を増やしながらお店を育てる。', 'お店の分析、戻るステップの選び方、商品ごとの価格、商品の入れ替え', 4),
+ (9, 'お客様を呼ぶ', 'お客様を呼ぶ：ブログとSNS', '約40分', 'ブログやSNSで、ココナラの外からも商品ページに来てもらえる入口を作る。', '誘導は一方通行、<!--consult-->ブログジェネレーター<!--/consult--><!--brain-->ChatGPTでブログ<!--/brain-->、Threads・Instagram・TikTokライブ', 4),
+ (10, '振り返って育てる', '振り返って育てる：毎月の見直しと成長', '毎月 約30分', '月に1回お店を見直して直すところを1つ決め、価格の違う商品を増やしながらお店を育てる。', '<!--consult-->お店の分析<!--/consult--><!--brain-->ChatGPTで見直し<!--/brain-->、戻るステップの選び方、商品ごとの価格、商品の入れ替え', 4),
 ]
 PHASES = {1: ('出品の土台を作る', 'STEP 0〜3'), 2: ('売れる商品を作る', 'STEP 4〜5'), 3: ('出品して取引する', 'STEP 6〜8'), 4: ('お客様を増やして育てる', 'STEP 9〜10')}
 CARD_COLORS = ['c1', 'c2', 'c3', 'c4', 'c5', 'c6']
@@ -35,7 +36,7 @@ CARD_COLORS = ['c1', 'c2', 'c3', 'c4', 'c5', 'c6']
 HEAD_LINKS = '''<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="guide.css?v=11">
+<link rel="stylesheet" href="guide.css?v=12">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="images/icon-180.png">
 <link rel="icon" type="image/png" sizes="192x192" href="images/icon-192.png">
@@ -45,9 +46,9 @@ HEAD_LINKS = '''<link rel="preconnect" href="https://fonts.googleapis.com">
 
 FOOTER = '''<footer>
   <p>手数料や規約は変わることがあります。2026年10月時点の公式ガイド・ヘルプをもとにしています。最新の内容は<a href="https://coconala.com/pages/guide_top" target="_blank" rel="noopener">ココナラ公式「ご利用ガイド」</a>で確認してください。</p>
-  <p>このガイドと5つのツールは虹オフィスが作ったもので、ココナラ公式のものではありません。</p>
+  <p>このガイド<!--consult-->と5つのツール<!--/consult-->は虹オフィスが作ったもので、ココナラ公式のものではありません。</p>
 </footer>
-<script src="guide.js?v=11"></script>'''
+<script src="guide.js?v=12"></script>'''
 
 def label_tables(h):
     def one(m):
@@ -83,7 +84,7 @@ EXTRA = [
 ]
 
 def extra_page(name, h1, sub, eyebrow, meta, prev, nxt):
-    body = label_tables(open(os.path.join(D, 'src', f'{name}.html'), encoding='utf-8').read())
+    body = label_tables(open(os.path.join(SRC, f'{name}.html'), encoding='utf-8').read())
     return f'''<!doctype html>
 <html lang="ja">
 <head>
@@ -114,7 +115,7 @@ def extra_page(name, h1, sub, eyebrow, meta, prev, nxt):
 
 def step_page(i):
     no, short, h1, time, goal, desc, phase = STEPS[i]
-    body = label_tables(open(os.path.join(D, 'src', f'step{no}.html'), encoding='utf-8').read())
+    body = label_tables(open(os.path.join(SRC, f'step{no}.html'), encoding='utf-8').read())
     prev = STEPS[i-1] if i > 0 else None
     nxt = STEPS[i+1] if i < len(STEPS)-1 else None
     pager = '<nav class="pager" aria-label="前後のステップ">'
@@ -162,7 +163,7 @@ def index_page():
         cards = []
         for k, (no, short, h1, time, goal, desc, phase) in enumerate(STEPS):
             if phase != p: continue
-            hw = ' '.join(re.findall(r'type="checkbox" id="([^"]+)"', open(os.path.join(D, 'src', f'step{no}.html'), encoding='utf-8').read()))
+            hw = ' '.join(re.findall(r'type="checkbox" id="([^"]+)"', open(os.path.join(SRC, f'step{no}.html'), encoding='utf-8').read()))
             cards.append(f'<a class="{CARD_COLORS[no % 6]}" href="step{no}.html" data-hw="{hw}"><span class="n">STEP {no}</span><b>{short}</b><span class="d">{desc}</span><span class="t">目安：{time}</span><span class="hw" aria-hidden="true"><i></i></span></a>')
         phases.append(f'<section class="phase"><h2>{name}<span>{rng}</span></h2><div class="cards">{"".join(cards)}</div></section>')
     return f'''<meta charset="utf-8">
@@ -171,10 +172,10 @@ def index_page():
 {HEAD_LINKS}
 {topbar()}
 <header class="page">
-  <div class="eyebrow">虹オフィス コンサル用ガイドブック</div>
+  <div class="eyebrow"><!--consult-->虹オフィス コンサル用ガイドブック<!--/consult--><!--brain-->虹オフィスのココナラ出品ガイド<!--/brain--></div>
   <h1 class="keep">ココナラ<wbr>はじめての<wbr>出品ガイド</h1>
   <div class="rainbow" aria-hidden="true"></div>
-  <p class="lead">ココナラ公式ガイドで押さえるべきところと、虹オフィスの5つのツールを、出品までの順番に並べました。STEP 0から順に進めれば、登録 → 方向決め → 商品づくり → 出品 → 集客 → 見直しまでたどり着けます。</p>
+  <p class="lead">ココナラ公式ガイドで押さえるべきところと、<!--consult-->虹オフィスの5つのツール<!--/consult--><!--brain-->ChatGPTに貼るだけのプロンプト<!--/brain-->を、出品までの順番に並べました。STEP 0から順に進めれば、登録 → 方向決め → 商品づくり → 出品 → 集客 → 見直しまでたどり着けます。</p>
 </header>
 <div style="max-width:1120px;margin:0 auto;display:grid;gap:40px">
   <div class="card progress">
@@ -221,16 +222,18 @@ def index_page():
     <p class="hint">宿題のチェックや記入した内容は、開いた場所ごとに保存されます。ホーム画面に追加したら、そのあとはホーム画面のアイコンから開くようにしてください。パソコンでは、ブックマークに入れておくと便利です。</p>
   </div>
   {"".join(phases)}
+<!--consult-->
   <section class="phase">
-    <h2>虹オフィスの5つのツール<span><!--consult-->どれも無料・登録不要<!--/consult--><!--brain-->サムネイル工房つき・ほかの4つは別売り<!--/brain--></span></h2>
+    <h2>虹オフィスの5つのツール<span>どれも無料・登録不要</span></h2>
     <div class="tools">
-<!--consult-->      <a href="https://niji-coconala-competitor-research.analia511.chatgpt.site/" target="_blank" rel="noopener"><b>競合リサーチ</b><span>STEP 2 で使う</span></a><!--/consult--><!--brain-->      <a class="sold-card" href="https://brain-market.com/u/niji-rara4649/a/b1ITN3YjMgoTZsNWa0JXY" target="_blank" rel="noopener"><b>競合リサーチ</b><span>STEP 2 で使う・別売り</span></a><!--/brain-->
-<!--consult-->      <a href="https://niji-coconala-product-studio.analia511.chatgpt.site/" target="_blank" rel="noopener"><b>商品づくりスタジオ</b><span>STEP 4 で使う</span></a><!--/consult--><!--brain-->      <a class="sold-card" href="https://brain-market.com/u/niji-rara4649/a/b4gDN3YjMgoTZsNWa0JXY" target="_blank" rel="noopener"><b>商品づくりスタジオ</b><span>STEP 4 で使う・別売り</span></a><!--/brain-->
+      <a href="https://niji-coconala-competitor-research.analia511.chatgpt.site/" target="_blank" rel="noopener"><b>競合リサーチ</b><span>STEP 2 で使う</span></a>
+      <a href="https://niji-coconala-product-studio.analia511.chatgpt.site/" target="_blank" rel="noopener"><b>商品づくりスタジオ</b><span>STEP 4 で使う</span></a>
       <a href="https://coconala-thumbnail-prompt-studio.analia511.chatgpt.site/" target="_blank" rel="noopener"><b>サムネイル工房</b><span>STEP 5 で使う</span></a>
-<!--consult-->      <a href="https://niji-coconala-blog-generator.analia511.chatgpt.site/" target="_blank" rel="noopener"><b>ブログジェネレーター</b><span>STEP 9 で使う</span></a><!--/consult--><!--brain-->      <a class="sold-card" href="https://brain-market.com/u/niji-rara4649/a/b2ETN3YjMgoTZsNWa0JXY" target="_blank" rel="noopener"><b>ブログジェネレーター</b><span>STEP 9 で使う・別売り</span></a><!--/brain-->
-<!--consult-->      <a href="https://niji-coconala-analysis.analia511.chatgpt.site/" target="_blank" rel="noopener"><b>お店の分析</b><span>STEP 10 で使う</span></a><!--/consult--><!--brain-->      <a class="sold-card" href="https://brain-market.com/u/niji-rara4649/a/b1ITN3YjMgoTZsNWa0JXY" target="_blank" rel="noopener"><b>お店の分析</b><span>STEP 10 で使う・別売り</span></a><!--/brain-->
+      <a href="https://niji-coconala-blog-generator.analia511.chatgpt.site/" target="_blank" rel="noopener"><b>ブログジェネレーター</b><span>STEP 9 で使う</span></a>
+      <a href="https://niji-coconala-analysis.analia511.chatgpt.site/" target="_blank" rel="noopener"><b>お店の分析</b><span>STEP 10 で使う</span></a>
     </div>
   </section>
+<!--/consult-->
 </div>
 {FOOTER}
 '''

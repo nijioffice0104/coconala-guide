@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="guide.css?v=11">
+<link rel="stylesheet" href="guide.css?v=12">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="images/icon-180.png">
 <link rel="icon" type="image/png" sizes="192x192" href="images/icon-192.png">
@@ -56,7 +56,7 @@
       <p style="font-size:14px">ゴール：出品したい悩みと、それぞれの入口・ミドル・バックの中身がメモできている</p></div>
     <div style="background:var(--p-pink)"><b>2回目（約30分）：出品原稿を作る</b>
       <ul style="font-size:14px">
-        <li><a href="#s4">4 商品づくりスタジオ</a></li>
+        <li><a href="#s4">4 ChatGPTで出品原稿</a></li>
         <li><a href="#s5">5 文字数と3つの手直し</a></li>
         <li><a href="#s6">6 検索される言葉</a></li>
       </ul>
@@ -124,7 +124,7 @@
 ・断定的な効果保証の表現は使わない
 ・医療・法律に関わる助言を想起させる切り口は避ける
 【参考にしたお店の分析結果】
-（STEP 2で保存した、競合リサーチの答えと「売れている理由」を貼ってください）</pre></div>
+（STEP 2で保存した、売れているお店の分析と「売れている理由」を貼ってください）</pre></div>
   </div>
 </section>
 
@@ -151,37 +151,45 @@
 </section>
 
 <section class="sec" id="s4">
-  <div class="sec-head"><span class="sec-no">4</span><h2>商品づくりスタジオで出品原稿を作る</h2><span class="tag">虹オフィスツール</span></div>
+  <div class="sec-head"><span class="sec-no">4</span><h2>ChatGPTで出品原稿を作る</h2></div>
   <div class="card">
-    <figure class="toolshot"><img src="images/tool-studio.jpg" alt="商品づくりスタジオの画面" loading="lazy"><figcaption>商品づくりスタジオの最初の画面。「商品づくりの依頼文」を選んで始めます</figcaption></figure>
-    <figure class="video"><button type="button" class="video-play" data-yt="lCuBu_z4pQw" aria-label="商品づくりスタジオの使い方動画を再生"><img src="https://i.ytimg.com/vi/lCuBu_z4pQw/hqdefault.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></button><figcaption>▶ 商品づくりスタジオの使い方動画。押すと再生します</figcaption></figure>
-    <div class="screens">
-      <div><span class="s">画面 1</span><b>お悩み・ジャンル</b>
-        <ul>
-          <li>今の状況：「これからお店をつくる」を選ぶ</li>
-          <li>ジャンル：恋愛・復縁・仕事など（複数選べます）</li>
-          <li>使える占術：タロット・霊視など（ヒーリング・ご祈祷だけなら選ばなくてOK）</li>
-        </ul></div>
-      <div><span class="s">画面 2</span><b>商品の組み合わせ</b>
-        <ul>
-          <li>商品の数：作りたい数を選ぶ（1〜20まで作れます）</li>
-          <li>「500円のお試し商品を入れる」をオン</li>
-          <li>商品ごとの価格を確認して、入口・ミドル・バックがそろうように直す</li>
-        </ul></div>
-      <div><span class="s">画面 3</span><b>あなたらしさ</b>
-        <ul>
-          <li>強み・大切にしている伝え方（ここで見つけた強みを入れる）</li>
-          <li>文章のトーン、お届けまでの日数、1件にかける時間</li>
-          <li>納品後の質問の回数、購入時にお客様から聞く情報</li>
-        </ul></div>
-    </div>
     <ol class="howto">
-      <li><div>3つの画面を入力して「ChatGPTへの依頼文を作る」を押す</div></li>
-      <li><div>「依頼文をコピー」を押して、ChatGPTに貼って送る<small>まず商品の案がいくつか出てきます</small></div></li>
-      <li><div>気に入った案の番号をChatGPTに送る<small>タイトル・本文・価格・オプション・よくある質問がそろった出品原稿が返ってきます</small></div></li>
+      <li><div>下のプロンプトの（　）を、ここまでで決めた悩み・お客様・強みに書きかえて送る<small>まず、入口・ミドル・バックそれぞれ2案ずつ、商品の案が出てきます</small></div></li>
+      <li><div>気に入った案の番号を送る<small>タイトル・キャッチコピー・サービス内容・オプション・よくある質問がそろった出品原稿が返ってきます</small></div></li>
       <li><div>原稿を保存して、下の「3つの手直し」をする</div></li>
+      <li><div>ほかの悩みの商品は、同じ会話で「次は（悩み）で、同じように作ってください」と送る</div></li>
     </ol>
-    <div class="sold"><b>商品づくりスタジオは別売りです</b><span>このガイドブックには含まれていません。Brainの「ココナラ商品づくりスタジオ」でお求めいただけます。</span><a href="https://brain-market.com/u/niji-rara4649/a/b4gDN3YjMgoTZsNWa0JXY" target="_blank" rel="noopener">販売ページを見る ↗</a></div>
+<div class="prompt"><div class="prompt-head"><b>プロンプト：出品原稿を作る</b><button type="button" class="copy">コピー</button></div><pre>あなたは、ココナラの占いカテゴリで、選ばれる商品ページを作るのが得意なプロデューサーです。
+下の内容をもとに商品を企画して、出品原稿を作ってください。
+
+【お店のこと】
+・お店の方向性：（STEP 2で書いた一文）
+・使える占術・できること：
+・占術以外の強み：
+・大切にしている伝え方：（例：言い切らず、寄り添って伝える）
+・受けない相談：（例：病気や生死に関わる相談）
+
+【作りたい商品】
+・扱う悩み：（例：復縁）
+・届けたい1人のお客様：（例：別れて2か月、まだ未練がある32歳の会社員）
+・お届けまでの日数：（例：3日以内）
+・納品後の質問の回数：（例：1回まで）
+
+【進め方】
+1. まず、入口（500〜1,500円）・ミドル（3,000〜8,000円）・バック（15,000円〜）の商品の案を、それぞれ2案ずつ、タイトルと一言の説明で出してください
+2. 私が案の番号を送ったら、その商品の出品原稿を次の形で作ってください
+・タイトル（25文字まで。お客様が検索しそうな言葉を前のほうに入れて、「〜ます」で終わる形）
+・キャッチコピー（30文字まで。タイトルに入らなかった悩みの言葉を入れる）
+・サービス内容（こんな方へ／鑑定でお伝えすること／お届けの流れ／大切にしていること）
+・価格と、有料オプションの案を2〜3個
+・購入にあたってのお願い（鑑定に必要な情報だけ）
+・よくある質問を3つ
+・［出品前に確認］本当にこの内容・価格・日数で鑑定できるか、自分で確かめることのメモ
+
+【守ること】
+・「絶対」「必ず」など、結果を約束する言葉は使わない
+・医療・法律の助言に見える言葉は使わない
+・LINEやSNSなど、ココナラの外への誘導は入れない</pre></div>
   </div>
 </section>
 
@@ -248,7 +256,7 @@
   <div class="card">
     <ul class="check" data-group="s4">
       <li><label><input type="checkbox" id="s4-1"><span>掛け算で、悩み別の切り口とターゲットを決めた</span></label></li>
-      <li><label><input type="checkbox" id="s4-2"><span>商品づくりスタジオで、入口・ミドル・バックの商品の出品原稿を作った</span></label></li>
+      <li><label><input type="checkbox" id="s4-2"><span>ChatGPTで、入口・ミドル・バックの商品の出品原稿を作った</span></label></li>
       <li><label><input type="checkbox" id="s4-3"><span>タイトル25文字・キャッチコピー30文字に収めた</span></label></li>
       <li><label><input type="checkbox" id="s4-4"><span>本文に自分の言葉を1〜2行足した</span></label></li>
       <li><label><input type="checkbox" id="s4-5"><span>検索されそうな言葉を、タイトル・キャッチコピー・本文に入れた</span></label></li>
@@ -269,8 +277,8 @@
 </div>
 <footer>
   <p>手数料や規約は変わることがあります。2026年10月時点の公式ガイド・ヘルプをもとにしています。最新の内容は<a href="https://coconala.com/pages/guide_top" target="_blank" rel="noopener">ココナラ公式「ご利用ガイド」</a>で確認してください。</p>
-  <p>このガイドと5つのツールは虹オフィスが作ったもので、ココナラ公式のものではありません。</p>
+  <p>このガイドは虹オフィスが作ったもので、ココナラ公式のものではありません。</p>
 </footer>
-<script src="guide.js?v=11"></script>
+<script src="guide.js?v=12"></script>
 </body>
 </html>
