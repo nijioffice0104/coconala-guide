@@ -1,6 +1,18 @@
 # ココナラはじめての出品ガイド：src/stepN.html の本文に共通の枠をつけて stepN.html と index.html を作る
-import os, html, re
+import os, html, re, sys, shutil
 D = os.path.dirname(os.path.abspath(__file__))
+# python build.py        → コンサル版（ヒアリングシート・公式LINEでの質問あり）をこのフォルダに作る
+# python build.py brain  → Brain版（ヒアリング・LINEサポートなし）を BRAIN_DIR に作る
+BRAIN = len(sys.argv) > 1 and sys.argv[1] == 'brain'
+BRAIN_DIR = 'g-vnzn5s3dc931'
+OUT = os.path.join(D, BRAIN_DIR) if BRAIN else D
+
+def variant(h):
+    # <!--consult-->…<!--/consult--> はコンサル版だけ、<!--brain-->…<!--/brain--> はBrain版だけに残す
+    drop = 'consult' if BRAIN else 'brain'
+    h = re.sub(r'<!--%s-->.*?<!--/%s-->\n?' % (drop, drop), '', h, flags=re.S)
+    return re.sub(r'<!--/?(consult|brain)-->\n?', '', h)
+
 TITLE = 'ココナラはじめての出品ガイド'
 
 # (番号, 目次での名前, ページの見出し, 所要時間の目安, ゴール, 表紙での説明, 段階)
@@ -52,14 +64,15 @@ def toc(current):
     for no, short, *_ in STEPS:
         cur = ' aria-current="page"' if no == current else ''
         links.append(f'    <a href="step{no}.html"{cur}><span class="n">{no}</span><span>{short}</span></a>')
-    cur = ' aria-current="page"' if current == 'hearing' else ''
-    links.insert(0, f'    <a class="pre-link" href="hearing.html"{cur}><span class="n">✎</span><span>ヒアリング</span></a>')
+    if not BRAIN:
+        cur = ' aria-current="page"' if current == 'hearing' else ''
+        links.insert(0, f'    <a class="pre-link" href="hearing.html"{cur}><span class="n">✎</span><span>ヒアリング</span></a>')
     cur = ' aria-current="page"' if current == 'faq' else ''
     links.append(f'    <a class="faq-link" href="faq.html"{cur}><span class="n">?</span><span>困ったときは</span></a>')
     return '  <nav class="toc" aria-label="ステップの目次">\n    <div class="label">ステップ</div>\n' + '\n'.join(links) + '\n  </nav>'
 
 def topbar():
-    return f'<div class="topbar"><a class="brand" href="index.html"><i aria-hidden="true"></i>{TITLE}</a><span class="links"><a class="home" href="hearing.html">ヒアリング</a><a class="home" href="faq.html">困ったときは</a><a class="home" href="index.html">目次へ</a></span></div>'
+    return f'<div class="topbar"><a class="brand" href="index.html"><i aria-hidden="true"></i>{TITLE}</a><span class="links"><!--consult--><a class="home" href="hearing.html">ヒアリング</a><!--/consult--><a class="home" href="faq.html">困ったときは</a><a class="home" href="index.html">目次へ</a></span></div>'
 
 # ステップ以外のページ：(ファイル名, ページ名, 小見出し, 上の小さな文字, 目安, 前のページ, 次のページ)
 EXTRA = [
@@ -166,7 +179,9 @@ def index_page():
   <div class="card">
     <h3>このガイドの使い方</h3>
     <ul>
+<!--consult-->
       <li>最初に<a href="hearing.html">ヒアリングシート</a>に答えて、虹オフィスの公式LINEに送ってください。今の状況に合わせて、どこから進めるかをご案内します。</li>
+<!--/consult-->
       <li>初めての人は<a href="step0.html">STEP 0「はじめに」</a>から順に進めてください。</li>
       <li>各ステップの最後に宿題があります。チェックと記入欄の内容は、このブラウザの中だけに保存されます。</li>
       <li>画面の画像は押すと大きく表示されます。プロンプトは「コピー」を押してChatGPTに貼り付けます。</li>
@@ -214,9 +229,18 @@ def index_page():
 {FOOTER}
 '''
 
-open(os.path.join(D, 'index.html'), 'w', encoding='utf-8').write(index_page())
+os.makedirs(OUT, exist_ok=True)
+def write(name, h):
+    open(os.path.join(OUT, name), 'w', encoding='utf-8').write(variant(h))
+write('index.html', index_page())
 for e in EXTRA:
-    open(os.path.join(D, f'{e[0]}.html'), 'w', encoding='utf-8').write(extra_page(*e))
+    if BRAIN and e[0] == 'hearing':
+        continue
+    write(f'{e[0]}.html', extra_page(*e))
 for i in range(len(STEPS)):
-    open(os.path.join(D, f'step{STEPS[i][0]}.html'), 'w', encoding='utf-8').write(step_page(i))
-print('built', len(STEPS) + 1, 'pages')
+    write(f'step{STEPS[i][0]}.html', step_page(i))
+if BRAIN:
+    for f in ('guide.css', 'guide.js', 'manifest.webmanifest'):
+        shutil.copy(os.path.join(D, f), OUT)
+    shutil.copytree(os.path.join(D, 'images'), os.path.join(OUT, 'images'), dirs_exist_ok=True)
+print('built', 'Brain版' if BRAIN else 'コンサル版', OUT, len(STEPS) + 1, 'pages')
