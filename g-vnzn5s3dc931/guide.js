@@ -69,6 +69,22 @@
     });
   }
 
+  // 目次ページ：宿題のチェックから進み具合を出す
+  var cards=document.querySelectorAll('.cards a[data-hw]');
+  if(cards.length){
+    var all=0,done=0,steps=0;
+    cards.forEach(function(a){
+      var ids=a.dataset.hw.split(' ').filter(Boolean),d=ids.filter(function(id){return state[id]}).length;
+      all+=ids.length;done+=d;
+      var bar=a.querySelector('.hw i');if(bar)bar.style.width=(ids.length?d/ids.length*100:0)+'%';
+      if(ids.length&&d===ids.length){a.classList.add('done');steps++}
+    });
+    var pct=all?Math.round(done/all*100):0,m=document.querySelector('.meter');
+    if(m){m.querySelector('i').style.width=pct+'%';m.setAttribute('aria-valuenow',pct)}
+    var pt=document.querySelector('.progress-text');
+    if(pt&&done)pt.innerHTML='<b>'+pct+'%</b>　宿題 '+done+' / '+all+'　・　完了したステップ '+steps+' / '+cards.length;
+  }
+
   // 使い方動画：押したときだけYouTubeを読み込む
   document.querySelectorAll('.video-play').forEach(function(btn){
     btn.addEventListener('click',function(){

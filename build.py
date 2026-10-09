@@ -35,7 +35,7 @@ CARD_COLORS = ['c1', 'c2', 'c3', 'c4', 'c5', 'c6']
 HEAD_LINKS = '''<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="guide.css?v=9">
+<link rel="stylesheet" href="guide.css?v=10">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="images/icon-180.png">
 <link rel="icon" type="image/png" sizes="192x192" href="images/icon-192.png">
@@ -47,7 +47,7 @@ FOOTER = '''<footer>
   <p>手数料や規約は変わることがあります。2026年10月時点の公式ガイド・ヘルプをもとにしています。最新の内容は<a href="https://coconala.com/pages/guide_top" target="_blank" rel="noopener">ココナラ公式「ご利用ガイド」</a>で確認してください。</p>
   <p>このガイドと5つのツールは虹オフィスが作ったもので、ココナラ公式のものではありません。</p>
 </footer>
-<script src="guide.js?v=9"></script>'''
+<script src="guide.js?v=10"></script>'''
 
 def label_tables(h):
     def one(m):
@@ -162,7 +162,8 @@ def index_page():
         cards = []
         for k, (no, short, h1, time, goal, desc, phase) in enumerate(STEPS):
             if phase != p: continue
-            cards.append(f'<a class="{CARD_COLORS[no % 6]}" href="step{no}.html"><span class="n">STEP {no}</span><b>{short}</b><span class="d">{desc}</span><span class="t">目安：{time}</span></a>')
+            hw = ' '.join(re.findall(r'type="checkbox" id="([^"]+)"', open(os.path.join(D, 'src', f'step{no}.html'), encoding='utf-8').read()))
+            cards.append(f'<a class="{CARD_COLORS[no % 6]}" href="step{no}.html" data-hw="{hw}"><span class="n">STEP {no}</span><b>{short}</b><span class="d">{desc}</span><span class="t">目安：{time}</span><span class="hw" aria-hidden="true"><i></i></span></a>')
         phases.append(f'<section class="phase"><h2>{name}<span>{rng}</span></h2><div class="cards">{"".join(cards)}</div></section>')
     return f'''<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -176,6 +177,11 @@ def index_page():
   <p class="lead">ココナラ公式ガイドで押さえるべきところと、虹オフィスの5つのツールを、出品までの順番に並べました。STEP 0から順に進めれば、登録 → 方向決め → 商品づくり → 出品 → 集客 → 見直しまでたどり着けます。</p>
 </header>
 <div style="max-width:1120px;margin:0 auto;display:grid;gap:40px">
+  <div class="card progress">
+    <h3>あなたの進み具合</h3>
+    <div class="meter" role="progressbar" aria-label="宿題の進み具合" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i></i></div>
+    <p class="progress-text">宿題にチェックを入れると、ここに進み具合が出ます。</p>
+  </div>
   <div class="card">
     <h3>このガイドの使い方</h3>
     <ul>
