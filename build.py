@@ -35,7 +35,7 @@ CARD_COLORS = ['c1', 'c2', 'c3', 'c4', 'c5', 'c6']
 HEAD_LINKS = '''<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="guide.css?v=10">
+<link rel="stylesheet" href="guide.css?v=11">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="images/icon-180.png">
 <link rel="icon" type="image/png" sizes="192x192" href="images/icon-192.png">
@@ -47,7 +47,7 @@ FOOTER = '''<footer>
   <p>手数料や規約は変わることがあります。2026年10月時点の公式ガイド・ヘルプをもとにしています。最新の内容は<a href="https://coconala.com/pages/guide_top" target="_blank" rel="noopener">ココナラ公式「ご利用ガイド」</a>で確認してください。</p>
   <p>このガイドと5つのツールは虹オフィスが作ったもので、ココナラ公式のものではありません。</p>
 </footer>
-<script src="guide.js?v=10"></script>'''
+<script src="guide.js?v=11"></script>'''
 
 def label_tables(h):
     def one(m):
@@ -222,13 +222,13 @@ def index_page():
   </div>
   {"".join(phases)}
   <section class="phase">
-    <h2>虹オフィスの5つのツール<span>どれも無料・登録不要</span></h2>
+    <h2>虹オフィスの5つのツール<span><!--consult-->どれも無料・登録不要<!--/consult--><!--brain-->サムネイル工房つき・ほかの4つは別売り<!--/brain--></span></h2>
     <div class="tools">
-      <a href="https://niji-coconala-competitor-research.analia511.chatgpt.site/" target="_blank" rel="noopener"><b>競合リサーチ</b><span>STEP 2 で使う</span></a>
-      <a href="https://niji-coconala-product-studio.analia511.chatgpt.site/" target="_blank" rel="noopener"><b>商品づくりスタジオ</b><span>STEP 4 で使う</span></a>
+<!--consult-->      <a href="https://niji-coconala-competitor-research.analia511.chatgpt.site/" target="_blank" rel="noopener"><b>競合リサーチ</b><span>STEP 2 で使う</span></a><!--/consult--><!--brain-->      <a class="sold-card" href="https://brain-market.com/u/niji-rara4649/a/b1ITN3YjMgoTZsNWa0JXY" target="_blank" rel="noopener"><b>競合リサーチ</b><span>STEP 2 で使う・別売り</span></a><!--/brain-->
+<!--consult-->      <a href="https://niji-coconala-product-studio.analia511.chatgpt.site/" target="_blank" rel="noopener"><b>商品づくりスタジオ</b><span>STEP 4 で使う</span></a><!--/consult--><!--brain-->      <a class="sold-card" href="https://brain-market.com/u/niji-rara4649/a/b4gDN3YjMgoTZsNWa0JXY" target="_blank" rel="noopener"><b>商品づくりスタジオ</b><span>STEP 4 で使う・別売り</span></a><!--/brain-->
       <a href="https://coconala-thumbnail-prompt-studio.analia511.chatgpt.site/" target="_blank" rel="noopener"><b>サムネイル工房</b><span>STEP 5 で使う</span></a>
-      <a href="https://niji-coconala-blog-generator.analia511.chatgpt.site/" target="_blank" rel="noopener"><b>ブログジェネレーター</b><span>STEP 9 で使う</span></a>
-      <a href="https://niji-coconala-analysis.analia511.chatgpt.site/" target="_blank" rel="noopener"><b>お店の分析</b><span>STEP 10 で使う</span></a>
+<!--consult-->      <a href="https://niji-coconala-blog-generator.analia511.chatgpt.site/" target="_blank" rel="noopener"><b>ブログジェネレーター</b><span>STEP 9 で使う</span></a><!--/consult--><!--brain-->      <a class="sold-card" href="https://brain-market.com/u/niji-rara4649/a/b2ETN3YjMgoTZsNWa0JXY" target="_blank" rel="noopener"><b>ブログジェネレーター</b><span>STEP 9 で使う・別売り</span></a><!--/brain-->
+<!--consult-->      <a href="https://niji-coconala-analysis.analia511.chatgpt.site/" target="_blank" rel="noopener"><b>お店の分析</b><span>STEP 10 で使う</span></a><!--/consult--><!--brain-->      <a class="sold-card" href="https://brain-market.com/u/niji-rara4649/a/b1ITN3YjMgoTZsNWa0JXY" target="_blank" rel="noopener"><b>お店の分析</b><span>STEP 10 で使う・別売り</span></a><!--/brain-->
     </div>
   </section>
 </div>

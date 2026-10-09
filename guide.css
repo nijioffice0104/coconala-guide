@@ -323,3 +323,11 @@ h1.keep{word-break:keep-all}
 .cards .hw i{display:block;height:100%;width:0;background:var(--accent);opacity:.7;border-radius:999px}
 .cards a.done{border-color:var(--accent)}
 .cards a.done .n::after{content:"　✓ 完了";color:var(--ok)}
+
+/* Brain版：別売りツールの案内 */
+.sold{display:grid;gap:4px;padding:14px 16px;border-radius:10px;background:var(--soft);border:1px dashed var(--line)}
+.sold b{font-size:15px}
+.sold span{font-size:14px;color:var(--muted)}
+.sold a{justify-self:start;font-weight:700;font-size:14px}
+.tools a.sold-card{background:var(--soft);border:1px dashed var(--line);box-shadow:none}
+.tools a.sold-card b{color:var(--muted)}
