@@ -334,3 +334,14 @@ h1.keep{word-break:keep-all}
 .sold a{justify-self:start;font-weight:700;font-size:14px}
 .tools a.sold-card{background:var(--soft);border:1px dashed var(--line);box-shadow:none}
 .tools a.sold-card b{color:var(--muted)}
+
+/* ホーム画面に追加：ふだんは閉じておき、押したら手順を開く */
+details.home-add{display:block}
+details.home-add>*+*{margin-top:12px}
+details.home-add summary{list-style:none;cursor:pointer;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 12px;-webkit-tap-highlight-color:transparent}
+details.home-add summary::-webkit-details-marker{display:none}
+details.home-add summary b{font-family:var(--display);font-size:17px}
+details.home-add summary span{font-size:14px;color:var(--teal);font-weight:700;white-space:nowrap}
+details.home-add summary span::after{content:" ＋"}
+details.home-add[open] summary span::after{content:" －"}
+details.home-add[open] summary span{color:var(--muted)}

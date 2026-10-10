@@ -36,7 +36,7 @@ CARD_COLORS = ['c1', 'c2', 'c3', 'c4', 'c5', 'c6']
 HEAD_LINKS = '''<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="guide.css?v=13">
+<link rel="stylesheet" href="guide.css?v=14">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="images/icon-180.png">
 <link rel="icon" type="image/png" sizes="192x192" href="images/icon-192.png">
@@ -48,7 +48,7 @@ FOOTER = '''<footer>
   <p>手数料や規約は変わることがあります。2026年10月時点の公式ガイド・ヘルプをもとにしています。最新の内容は<a href="https://coconala.com/pages/guide_top" target="_blank" rel="noopener">ココナラ公式「ご利用ガイド」</a>で確認してください。</p>
   <p>このガイド<!--consult-->と5つのツール<!--/consult-->は虹オフィスが作ったもので、ココナラ公式のものではありません。</p>
 </footer>
-<script src="guide.js?v=13"></script>'''
+<script src="guide.js?v=14"></script>'''
 
 def label_tables(h):
     def one(m):
@@ -196,8 +196,8 @@ def index_page():
       <li>手が止まったときは<a href="faq.html">「困ったときは」</a>を開いてください。よくある質問と、ChatGPTに貼るだけのつまずき解決プロンプトがあります。</li>
     </ul>
   </div>
-  <div class="card home-add" id="home">
-    <h3>ホーム画面に置いておくと便利です</h3>
+  <details class="card home-add" id="home">
+    <summary><b>📱 ホーム画面に置いておくと便利です</b><span>追加のしかたを見る</span></summary>
     <p>スマホのホーム画面に追加しておくと、アプリのようにワンタップで開けます。</p>
     <div class="cols2">
       <div>
@@ -220,7 +220,7 @@ def index_page():
       </div>
     </div>
     <p class="hint">宿題のチェックや記入した内容は、開いた場所ごとに保存されます。ホーム画面に追加したら、そのあとはホーム画面のアイコンから開くようにしてください。パソコンでは、ブックマークに入れておくと便利です。</p>
-  </div>
+  </details>
   {"".join(phases)}
 <!--consult-->
   <section class="phase">

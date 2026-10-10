@@ -69,6 +69,10 @@
     });
   }
 
+  // 「ホーム画面に追加」へのリンク（#home）から来たときは、手順を開いておく
+  var home=document.getElementById('home');
+  if(home&&home.tagName==='DETAILS'&&location.hash==='#home') home.open=true;
+
   // 目次のカード：ホーム画面のアイコンから開いたとき（アプリ表示）でも、押したら必ずそのページへ移動する
   document.querySelectorAll('.cards a[href]').forEach(function(a){
     a.addEventListener('click',function(e){ if(e.metaKey||e.ctrlKey||e.shiftKey) return; e.preventDefault(); location.href=a.href; });
