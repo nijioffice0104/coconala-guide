@@ -255,7 +255,10 @@ section.sec{display:grid;gap:14px;scroll-margin-top:72px}
 .phase h2 span{font-size:12px;font-family:var(--body);color:var(--muted);font-weight:500}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
 .cards a{display:grid;gap:4px;align-content:start;padding:16px 18px;border-radius:12px;text-decoration:none;color:var(--fg);border:1px solid transparent;box-shadow:var(--shadow)}
-.cards a:hover{border-color:var(--accent)}
+@media (hover:hover){.cards a:hover{border-color:var(--accent)}}
+/* スマホのホーム画面から開いたときも、カードのどこを押しても確実に移動できるように */
+.cards a{touch-action:manipulation;cursor:pointer;-webkit-tap-highlight-color:rgba(168,63,63,.12)}
+.cards a *{pointer-events:none}
 .cards .n{font-family:var(--display);font-weight:700;color:var(--accent);font-size:13px}
 .cards b{font-family:var(--display);font-size:17px}
 .cards .d{font-size:14px;color:var(--muted);line-height:1.7}

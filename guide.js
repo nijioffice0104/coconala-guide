@@ -69,6 +69,11 @@
     });
   }
 
+  // 目次のカード：ホーム画面のアイコンから開いたとき（アプリ表示）でも、押したら必ずそのページへ移動する
+  document.querySelectorAll('.cards a[href]').forEach(function(a){
+    a.addEventListener('click',function(e){ if(e.metaKey||e.ctrlKey||e.shiftKey) return; e.preventDefault(); location.href=a.href; });
+  });
+
   // 目次ページ：宿題のチェックから進み具合を出す
   var cards=document.querySelectorAll('.cards a[data-hw]');
   if(cards.length){
